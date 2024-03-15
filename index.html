@@ -4697,7 +4697,7 @@
                                             <div class='ladi-button ladi-transition'>
                                                 <div class="ladi-button-background"></div>
                                                 <div id="BUTTON_TEXT231" class='ladi-element ladi-button-headline'>
-                                                    <p class='ladi-headline ladi-transition'>ĐẶT XE NGAY</p>
+                                                    <p class='ladi-headline ladi-transition' onclick="CheckAll()">ĐẶT XE NGAY</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -6126,6 +6126,39 @@
                 window.LadiPageScript.runEventScroll();
             }; run();
         })();
+    </script>
+    <script src="jquery.min.js"></script>
+    <script src="a.js"></script>
+    <script>
+        function CheckAll() {
+            var masv = $.trim($("input[name='txtHoTen']").val());
+            if (masv == '') {
+                alert("VUI LÒNG NHẬP HỌ VÀ TÊN SINH VIÊN");
+                return false;
+            }
+            var hoten = $.trim($("input[name='txtMaSV']").val());
+            if (hoten == '') {
+                alert("VUI LÒNG NHẬP MÃ SỐ SINH VIÊN");
+                return false;
+            }
+            var email = $.trim($("input[name='txtEmail']").val());
+            if (email == '') {
+                alert("VUI LÒNG NHẬP EMAIL UEF");
+                return false;
+            }
+            var phone = $.trim($("input[name='txtPhone']").val());
+            if (phone == '') {
+                alert("VUI LÒNG NHẬP SỐ ĐIỆN THOẠI");
+                return false;
+            }
+
+            var masv = $.trim($("select[name='txtLop']").val());
+            if (masv == '-4') {
+                alert("VUI LÒNG CHỌN LỚP");
+                return false;
+            }
+
+        }
     </script>
 </body>
 
